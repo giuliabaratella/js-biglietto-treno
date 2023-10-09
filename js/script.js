@@ -21,11 +21,14 @@ const priceKm = 0.21;
 let fullPrice = (nKm * priceKm);
 
 if (age < 18) {
-    result.innerHTML  = (fullPrice - (fullPrice * (20 / 100)));
+    finalPrice  = (fullPrice - (fullPrice * (20 / 100)));
 } else if (age > 65) {
-    result.innerHTML  = (fullPrice - (fullPrice * (40 / 100)));
+    finalPrice  = (fullPrice - (fullPrice * (40 / 100)));
 } else {
-    result.innerHTML  = fullPrice;
+    finalPrice  = fullPrice;
 }
 
+let n = finalPrice.toFixed(2);
+
+result.innerHTML = n;
 

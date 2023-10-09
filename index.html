@@ -9,12 +9,19 @@
 
 </head>
 <body>
-    <main>
-        <div>
-            <h1 class="text-uppercase">Compra un biglietto</h1>
-            <h3>Calcola il prezzo del tuo biglietto rispondendo ad alcune semplici domande</h3>
-            <p>Il costo del tuo biglietto è</p>
-            <h2 id="ticket-result"></h2>
+
+    <header>
+        <h1 class="text-uppercase">Ferrovie dello stato</h1>
+    </header>
+    <main class="d-flex align-items-center">
+        <div class="wrapper text-center d-flex flex-column justify-content-center">
+            <h3 class="py-3">Calcola il prezzo del tuo biglietto rispondendo ad alcune semplici domande</h3>
+            <p>Il costo del tuo biglietto è:</p>
+            <div class="d-flex justify-content-center align-items-center h3 column-gap-2">
+                <div>€</div>
+                <div id="ticket-result"></div>
+            </div>
+            <p class="disclaimer">Ricarica la tua pagina in caso di errore.</p>
         </div>
         
     </main>

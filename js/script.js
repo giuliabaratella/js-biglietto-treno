@@ -12,10 +12,6 @@ let age = (prompt ('Quanti anni hai?'));
 
 let result = (document.getElementById('ticket-result'));
 
-if(isNaN(nKm) || isNaN(age)) {
-    result.innerHTML = 'Attenzione! Il sistema accetta solo valori numerici';
-}
-
 const priceKm = 0.21;
 
 let fullPrice = (nKm * priceKm);
@@ -31,4 +27,8 @@ if (age < 18) {
 let n = finalPrice.toFixed(2);
 
 result.innerHTML = n;
+
+if(isNaN(nKm) || isNaN(age)) {
+    result.innerHTML = 'Attenzione! Il sistema accetta solo valori numerici';
+}
 

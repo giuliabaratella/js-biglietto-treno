@@ -16,4 +16,16 @@ if(isNaN(nKm) || isNaN(age)) {
     result.innerHTML = 'Attenzione! Il sistema accetta solo valori numerici';
 }
 
+const priceKm = 0.21;
+
+let fullPrice = (nKm * priceKm);
+
+if (age < 18) {
+    result.innerHTML  = (fullPrice - (fullPrice * (20 / 100)));
+} else if (age > 65) {
+    result.innerHTML  = (fullPrice - (fullPrice * (40 / 100)));
+} else {
+    result.innerHTML  = fullPrice;
+}
+
 

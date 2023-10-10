@@ -6,29 +6,30 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
 
-let nKm = (prompt ('Quanti chilometri devi percorrere?'));
+let nKm = parseInt(prompt ('Quanti chilometri devi percorrere?'));
 
-let age = (prompt ('Quanti anni hai?'));
+let age = parseInt(prompt ('Quanti anni hai?'));
 
 let result = (document.getElementById('ticket-result'));
 
 const priceKm = 0.21;
+const discountUnder18 = 20 / 100;
+const discountOver65 = 40 / 100;
 
-let fullPrice = (nKm * priceKm);
+let price = (nKm * priceKm);
 
-if (age < 18) {
-    finalPrice  = (fullPrice - (fullPrice * (20 / 100)));
-} else if (age > 65) {
-    finalPrice  = (fullPrice - (fullPrice * (40 / 100)));
-} else {
-    finalPrice  = fullPrice;
+if(isNaN(nKm) || isNaN(age)) {
+    location.reload ();
 }
 
-let n = finalPrice.toFixed(2);
+if (age < 18) {
+    price  = price - (price * discountUnder18);
+} else if (age > 65) {
+    price  = price - (price * discountOver65);
+}
+
+let n = price.toFixed(2);
 
 result.innerHTML = n;
 
-if(isNaN(nKm) || isNaN(age)) {
-    result.innerHTML = 'Attenzione! Il sistema accetta solo valori numerici';
-}
 
